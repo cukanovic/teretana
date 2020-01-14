@@ -1,0 +1,15 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+.error-message {
+  color: #CE0B24 !important;
+  font-size: 12px !important;
+  top: 0px !important;
+  position: relative !important;
+}
