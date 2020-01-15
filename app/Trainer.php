@@ -24,8 +24,13 @@ class Trainer extends User
         });
     }
 
+    public function trainings()
+    {
+        return $this->hasMany(Training::class);
+    }
+
     public function bookings()
     {
-        return $this->belongsToManyThrough(Booking::class, Training::class);
+        return $this->hasManyThrough(Booking::class, Training::class);
     }
 }

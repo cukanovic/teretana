@@ -9,6 +9,10 @@ class Training extends Model
 {
     use SoftDeletes;
 
+    protected $fillable = [
+        'name', 'description', 'price', 'number_of_sessions', 'trainer_id'
+    ];
+
     public function bookings()
     {
         return $this->hasMany(Booking::class);
@@ -22,5 +26,10 @@ class Training extends Model
     public function getNameAttribute()
     {
         return ucwords($this->attributes['name'] ?? '');
+    }
+
+    public function canBeDeleted()
+    {
+        return $this->bookings()->count() == 0;
     }
 }
