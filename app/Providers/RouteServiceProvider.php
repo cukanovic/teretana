@@ -42,11 +42,13 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map()
     {
+        $this->mapAdminRoutes();
+
+        $this->mapTrainerRoutes();
+
         $this->mapApiRoutes();
 
         $this->mapWebRoutes();
-
-        $this->mapAdminRoutes();
     }
 
     /**
@@ -80,10 +82,19 @@ class RouteServiceProvider extends ServiceProvider
 
     protected function mapAdminRoutes()
     {
-        Route::prefix('admin')
+        Route::domain(config('app.admin_domain'))
              ->middleware('web')
              ->name('admin.')
              ->namespace($this->namespace . '\Admin')
              ->group(base_path('routes/admin.php'));
+    }
+
+    protected function mapTrainerRoutes()
+    {
+        Route::domain(config('app.trainer_domain'))
+             ->middleware('web')
+             ->name('trainer.')
+             ->name($this->namespace . '\Trainer')
+             ->group(base_path('routes/trainer.php'));
     }
 }

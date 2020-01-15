@@ -228,4 +228,7 @@ return [
 
     ],
 
+    'admin_domain' => env('ADMIN_DOMAIN', 'http://admin.teretana.com'),
+    'trainer_domain' => env('TRAINER_DOMAIN', 'http://trener.teretana.com'),
+
 ];
