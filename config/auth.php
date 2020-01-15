@@ -46,6 +46,11 @@ return [
             'provider' => 'admins',
         ],
 
+        'trainer' => [
+            'driver' => 'session',
+            'provider' => 'trainers',
+        ],
+
         'api' => [
             'driver' => 'token',
             'provider' => 'users',
@@ -80,6 +85,11 @@ return [
             'driver' => 'eloquent',
             'model' => \App\Admin::class,
         ],
+
+        'trainers' => [
+            'driver' => 'eloquent',
+            'model' => \App\Trainer::class,
+        ]
 
         // 'users' => [
         //     'driver' => 'database',

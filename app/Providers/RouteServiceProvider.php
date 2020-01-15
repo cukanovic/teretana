@@ -94,7 +94,7 @@ class RouteServiceProvider extends ServiceProvider
         Route::domain(config('app.trainer_domain'))
              ->middleware('web')
              ->name('trainer.')
-             ->name($this->namespace . '\Trainer')
+             ->namespace($this->namespace . '\Trainer')
              ->group(base_path('routes/trainer.php'));
     }
 }

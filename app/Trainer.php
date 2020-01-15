@@ -31,6 +31,7 @@ class Trainer extends User
 
     public function bookings()
     {
-        return $this->hasManyThrough(Booking::class, Training::class);
+        return $this->hasManyThrough(Booking::class, Training::class)
+            ->whereIn('status', [Booking::STATUS_ACCEPTED, Booking::STATUS_COMPLETED]);
     }
 }

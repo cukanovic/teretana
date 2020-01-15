@@ -1,6 +1,6 @@
 <div class="list-group">
     @foreach ($bookings as $booking)
-        <a href="{{ route('admin.bookings.show', $booking->id) }}" class="list-group-item list-group-item-action">
+        <a href="{{ route($showRouteName ?? 'admin.bookings.show', $booking->id) }}" class="list-group-item list-group-item-action">
             <div class="d-flex w-100 justify-content-between">
                 <h4 class="list-group-item-heading justify-content-between">
                     {{ $booking->customer->name }}
