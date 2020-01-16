@@ -18,6 +18,7 @@ class TrainingController extends Controller
     {
         $trainings = Training::with('trainer')
                              ->withCount('bookings')
+                             ->orderBy('name', 'asc')
                              ->get();
 
         return view('admin.trainings.index', compact('trainings'));

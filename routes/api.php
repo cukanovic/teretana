@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,6 +12,8 @@ use Illuminate\Http\Request;
 */
 
 Route::middleware('web', 'auth:admin')->group(function () {
+    Route::delete('trainings/{training}', 'TrainingsController@delete')->name('trainings.delete');
+
     Route::patch('bookings/{booking}/accept', 'BookingsController@accept')->name('bookings.accept');
     Route::patch('bookings/{booking}/complete', 'BookingsController@complete')->name('bookings.complete');
     Route::delete('bookings/{booking}', 'BookingsController@delete')->name('bookings.delete');

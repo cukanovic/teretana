@@ -13,7 +13,7 @@
 
         @include('layout.form_actions', [
             'submitText' => 'Sačuvaj',
-            'cancelUrl' => route('admin.trainings.show', $trainer->id),
+            'cancelUrl' => route('admin.trainings.show', $training->id),
             'cancelText' => 'Otkaži',
         ])
     </form>

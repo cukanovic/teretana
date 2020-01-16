@@ -15,7 +15,7 @@ class TrainersController extends Controller
      */
     public function index()
     {
-        $trainers = Trainer::withCount('trainings')->get();
+        $trainers = Trainer::withCount('trainings', 'bookings')->get();
 
         return view('admin.trainers.index', compact('trainers'));
     }
