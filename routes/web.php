@@ -13,8 +13,19 @@
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
-Auth::routes();
+Route::resource('trainings', 'TrainingsController')
+    ->only('index', 'show');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('trainers', 'TrainersController')
+    ->only('index', 'show');
+
+Route::middleware('auth:web')->group(function () {
+    Route::get('/google/callback', 'GoogleAuthController@callback')->name('google.callback');
+
+    Route::resource('bookings', 'BookingsController')
+        ->except('edit', 'update');
+
+    Route::get('/bookings/{booking}/sync', 'GoogleCalendarController@sync')->name('google.sync');
+});

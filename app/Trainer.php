@@ -34,4 +34,9 @@ class Trainer extends User
         return $this->hasManyThrough(Booking::class, Training::class)
             ->whereIn('status', [Booking::STATUS_ACCEPTED, Booking::STATUS_COMPLETED]);
     }
+
+    public function getDescriptionAttribute()
+    {
+        return 'Body Building, the original LES MILLS barbell class, will sculpt, tone and strengthen your entire body, fast!';
+    }
 }
