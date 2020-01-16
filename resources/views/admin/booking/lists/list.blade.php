@@ -1,9 +1,9 @@
 <div class="list-group">
     @foreach ($bookings as $booking)
-        <a href="{{ route($showRouteName ?? 'admin.bookings.show', $booking->id) }}" class="list-group-item list-group-item-action">
+        <div class="list-group-item list-group-item-action" id="booking-{{$booking->id}}">
             <div class="d-flex w-100 justify-content-between">
                 <h4 class="list-group-item-heading justify-content-between">
-                    {{ $booking->customer->name }}
+                    <a href="{{ route($showRouteName ?? 'admin.bookings.show', $booking->id) }}">{{ $booking->customer->name }}</a>
                     <br>
                     Trening: {{ $booking->training->name }}
                 </h4>
@@ -14,6 +14,6 @@
             <p class="list-group-item-text">
                 {{ $booking->schedule->format('d.m.y. H:i') }}
             </p>
-        </a>
+        </div>
     @endforeach
 </div>

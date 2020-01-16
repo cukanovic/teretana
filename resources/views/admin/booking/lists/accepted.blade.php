@@ -3,16 +3,19 @@
 @if($showActions ?? true)
     @foreach ($bookings as $booking)
         @section("action-buttons-{$booking->id}")
-            <form action="{{ route('admin.bookings.update', $booking->id) }}" method="POST">
-                @csrf
-                @method('PATCH')
-
-                @hidden([
-                    'name' => 'action',
-                    'value' => 'completed',
-                ])
-                <button type="submit" class="btn btn-warning">Završi</button>
-            </form>
+            <button type="submit" class="btn btn-warning complete-btn" onclick="completeBooking({{ $booking->id }})">Završi</button>
         @endsection
     @endforeach
+
+    <script>
+        function completeBooking(bookingId) {
+            console.log('que te pasa');
+            let url = '{{ route('api.bookings.complete', '#') }}'.replace('#', bookingId);
+            axios.patch(url).then(function () {
+                let listRow = $(`#booking-${bookingId}`).detach();
+                $(listRow).find('.complete-btn').remove();
+                $('#completed .list-group').append(listRow);
+            })
+        }
+    </script>
 @endif
