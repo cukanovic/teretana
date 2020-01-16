@@ -17,4 +17,6 @@ Route::middleware('web', 'auth:admin')->group(function () {
     Route::patch('bookings/{booking}/accept', 'BookingsController@accept')->name('bookings.accept');
     Route::patch('bookings/{booking}/complete', 'BookingsController@complete')->name('bookings.complete');
     Route::delete('bookings/{booking}', 'BookingsController@delete')->name('bookings.delete');
+
+    Route::delete('trainers/{trainer}', 'TrainersController@delete')->name('trainers.delete');
 });
