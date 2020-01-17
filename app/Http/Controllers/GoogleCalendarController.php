@@ -29,6 +29,8 @@ class GoogleCalendarController extends Controller
 
         $event = $this->convertBookingToGoogleCalendarEvent($booking);
         $calendarService->events->insert('primary', $event);
+
+        return redirect()->route('bookings.index')->with('success', 'Rezervacija je sinhronizovana sa Google kalendarom.');
     }
 
     private function requestGoogleAccessTokenForUser(User $user, array $state = [])

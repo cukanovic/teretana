@@ -1,0 +1,1 @@
+@extends('customer.bookings.lists.list')

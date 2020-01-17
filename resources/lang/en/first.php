@@ -14,6 +14,10 @@ return [
         'submitCta' => 'Dodaj',
         'cancelCta' => 'Odustani',
     ],
+    'book' => [
+        'dateLabel' => 'Datum',
+        'timeLabel' => 'Vreme',
+    ],
     'fields' => [
         'nameLabel' => 'Ime',
         'descriptionLabel' => 'Opis',

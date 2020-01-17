@@ -1,6 +1,8 @@
 {{ $wrapContentInContainer = false }}
 @extends('layouts.app')
 
+@section('flash') @endsection
+
 @section('styles')
     @parent
     <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}" type="text/css">
@@ -9,6 +11,7 @@
     <link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/slicknav.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap-datetimepicker.min.css') }}" type="text/css">
 @endsection
 
 @section('fonts')
@@ -58,4 +61,6 @@
             <div id="mobile-menu-wrap"></div>
         </div>
     </header>
+
+    @include('layout.flash')
 @endsection

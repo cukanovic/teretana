@@ -3,7 +3,7 @@
         <div class="list-group-item list-group-item-action" id="booking-{{$booking->id}}">
             <div class="d-flex w-100 justify-content-between">
                 <h4 class="list-group-item-heading justify-content-between">
-                    <a href="{{ route('admin.bookings.show', $booking->id) }}">{{ $booking->customer->name }}</a>
+                    <a href="{{ route('bookings.show', $booking->id) }}">{{ $booking->customer->name }}</a>
                     <br>
                     Trening: {{ $booking->training->name }}
                 </h4>

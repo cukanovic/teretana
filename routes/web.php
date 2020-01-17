@@ -22,6 +22,9 @@ Route::resource('trainers', 'TrainersController')
     ->only('index', 'show');
 
 Route::middleware('auth:web')->group(function () {
+    Route::get('trainings/{training}/book', 'TrainingsController@book')->name('trainings.book');
+    Route::post('trainings/{training}/book', 'TrainingsController@storeBooking')->name('trainings.book.store');
+
     Route::get('/google/callback', 'GoogleAuthController@callback')->name('google.callback');
 
     Route::resource('bookings', 'BookingsController')

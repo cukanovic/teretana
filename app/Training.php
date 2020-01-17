@@ -28,6 +28,16 @@ class Training extends Model
         return ucwords($this->attributes['name'] ?? '');
     }
 
+    public function getBadgeTypeAttribute()
+    {
+        return [
+            'easy' => 'secondary',
+            'medium' => 'primary',
+            'hard' => 'danger',
+            'insane' => 'warning',
+        ][$this->difficulty];
+    }
+
     public function canBeDeleted()
     {
         return $this->bookings()->count() == 0;

@@ -14,9 +14,7 @@ class BookingsController extends Controller
      */
     public function index(Request $request)
     {
-        return view('customer.bookings.index', [
-            'bookings' => $request->user()->bookings,
-        ]);
+        return view('customer.bookings.index', $request->user()->bookings->groupBy('status')->all());
     }
 
     /**
@@ -48,7 +46,7 @@ class BookingsController extends Controller
      */
     public function show(Booking $booking)
     {
-        //
+        return view('customer.bookings.show', compact('booking'));
     }
 
     /**

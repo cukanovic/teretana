@@ -76,9 +76,12 @@
                 </div>
             </nav>
         @show
-        <div class="container">
-            @include('layout.flash')
-        </div>
+
+        @section('flash')
+            <div class="container">
+                @include('layout.flash')
+            </div>
+        @show
 
         <main class="py-4">
             @if ($wrapContentInContainer ?? true)
