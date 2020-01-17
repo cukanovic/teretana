@@ -19,7 +19,10 @@
             })
         }
         function declineBooking(bookingId) {
-
+            let url = '{{ route('api.bookings.delete', '#') }}'.replace('#', bookingId);
+            axios.delete(url).then(function () {
+                $(`#booking-${bookingId}`).remove();
+            })
         }
     </script>
 @endif
