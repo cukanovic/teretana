@@ -9,7 +9,11 @@
                     <div class="hero-text">
                         <h4>Lični treninzi</h4>
                         <h1>Make it <span>Shape</span></h1>
-                        <a href="{{ route('register') }}" class="primary-btn">Učlani me</a>
+                        @guest
+                            <a href="{{ route('register') }}" class="primary-btn">Učlani me</a>
+                        @else
+                            <a href="{{ route('trainings.index') }}" class="primary-btn">Vidi treninge</a>
+                        @endguest
                     </div>
                 </div>
             </div>
@@ -18,7 +22,11 @@
                     <div class="hero-text">
                         <h4>Nutricionizam</h4>
                         <h1>Make it <span>Shape</span></h1>
-                        <a href="{{ route('register') }}#" class="primary-btn">Učlani me</a>
+                        @guest
+                            <a href="{{ route('register') }}" class="primary-btn">Učlani me</a>
+                        @else
+                            <a href="{{ route('trainings.index') }}" class="primary-btn">Vidi treninge</a>
+                        @endguest
                     </div>
                 </div>
             </div>
@@ -27,7 +35,11 @@
                     <div class="hero-text">
                         <h4>Praćenje napretka</h4>
                         <h1>Make it <span>Shape</span></h1>
-                        <a href="{{ route('register') }}" class="primary-btn">Učlani me</a>
+                        @guest
+                            <a href="{{ route('register') }}" class="primary-btn">Učlani me</a>
+                        @else
+                            <a href="{{ route('trainings.index') }}" class="primary-btn">Vidi treninge</a>
+                        @endguest
                     </div>
                 </div>
             </div>

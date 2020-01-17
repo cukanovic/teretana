@@ -16,3 +16,7 @@
     </div>
 </section>
 <!-- Site Breadcrumb End -->
+
+<div class="container">
+    @include('layout.flash')
+</div>

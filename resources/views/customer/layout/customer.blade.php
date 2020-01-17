@@ -28,11 +28,6 @@
 
     <header class="header-section">
         <div class="container">
-            <div class="logo">
-                <a href="./index.html">
-                    <img src="{{ asset('img/logo.png') }}" alt="">
-                </a>
-            </div>
             <div class="nav-menu">
                 <nav class="mainmenu mobile-menu">
                     <ul>
@@ -53,7 +48,7 @@
                                 </script>
                             </li>
                         @else
-                            <li><a href="{{ route('login') }}">Prijavi se</a></li>
+                            <li @if(($activePage ?? '') == 'login') class="active" @endif><a href="{{ route('login') }}">Prijavi se</a></li>
                         @endauth
                     </ul>
                 </nav>
@@ -61,6 +56,4 @@
             <div id="mobile-menu-wrap"></div>
         </div>
     </header>
-
-    @include('layout.flash')
 @endsection
