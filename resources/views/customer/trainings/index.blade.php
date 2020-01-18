@@ -20,10 +20,6 @@
                         </h4>
                         <div class="justify-content-end">
                             <span class="h1 px-3 py-2 badge badge-pill badge-{{ $training->badge_type }}">{{ strtoupper($training->difficulty) }}</span>
-                            @if ($training->canBeDeleted())
-                                <br>
-                                <button type="button" class="btn btn-danger prevent-parent-click" onclick="deleteTraining({{ $training->id }})">Obriši trening</button>
-                            @endif
                         </div>
                     </div>
                     <p class="list-group-item-text">
