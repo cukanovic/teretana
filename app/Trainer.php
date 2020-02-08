@@ -37,6 +37,6 @@ class Trainer extends User
 
     public function getDescriptionAttribute()
     {
-        return 'Body Building, the original LES MILLS barbell class, will sculpt, tone and strengthen your entire body, fast!';
+        return 'Vežbaj sa mnom!';
     }
 }
